@@ -1,16 +1,34 @@
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HelloWorld from '@/components/HelloWorld.vue';
+import Calendar from '@/views/Calendar.vue';
+import PlantPage from '@/views/PlantPage.vue';
+import Plants from '@/views/Plants.vue';
+import Profile from '@/views/Profile.vue';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/plants',
   },
   {
-    path: '/home',
-    name: 'Home',
-    component: HelloWorld,
+    path: '/plants',
+    name: 'Plants',
+    component: Plants,
+  },
+  {
+    path: '/plants/:name',
+    name: 'PlantPage',
+    component: PlantPage,
+  },
+  {
+    path: '/calendar',
+    name: 'Calendar',
+    component: Calendar,
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile,
   },
 ];
 
