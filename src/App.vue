@@ -11,14 +11,13 @@ import { defineComponent } from 'vue';
 // import HelloWorld from './components/HelloWorld.vue';
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 
-
 export default defineComponent({
   name: 'App',
   components: {
     // HelloWorld,
     IonApp,
     IonRouterOutlet,
-  }
+  },
 });
 </script>
 
