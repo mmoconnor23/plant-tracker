@@ -1,22 +1,45 @@
 <template>
   <IonApp>
-    <IonRouterOutlet/>
-    <!--<img alt="Vue logo" src="./assets/logo.png">-->
-    <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <IonTabs>
+      <!--TODO: named slot error, remove warn override-->
+      <IonTabBar slot="bottom">
+        <IonTabButton tab="plants" href="/plants">
+          <IonLabel>Plants</IonLabel>
+          <IonIcon name="leaf-outline"></IonIcon>
+        </IonTabButton>
+        <IonTabButton tab="calendar" href="/calendar">
+          <IonLabel>Calendar</IonLabel>
+          <IonIcon name="calendar-clear-outline"></IonIcon>
+        </IonTabButton>
+        <IonTabButton tab="profile" href="/profile">
+          <IonLabel>Profile</IonLabel>
+          <IonIcon name="person-outline"></IonIcon>
+        </IonTabButton>
+      </IonTabBar>
+    </IonTabs>
   </IonApp>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-// import HelloWorld from './components/HelloWorld.vue';
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
+import {
+  IonApp,
+  IonIcon,
+  IonLabel,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+} from '@ionic/vue';
 
 export default defineComponent({
   name: 'App',
   components: {
-    // HelloWorld,
     IonApp,
-    IonRouterOutlet,
+    IonIcon,
+    IonLabel,
+    IonTabBar,
+    IonTabButton,
+    IonTabs,
   },
 });
 </script>

@@ -56,7 +56,8 @@
         {
           "devDependencies": true
         }
-      ]
+      ],
+      "vue/no-deprecated-slot-attribute": "warn"
     }
   },
   "browserslist": [
