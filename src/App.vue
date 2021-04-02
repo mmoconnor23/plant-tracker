@@ -5,15 +5,15 @@
       <IonTabBar slot="bottom">
         <IonTabButton tab="plants" href="/plants">
           <IonLabel>Plants</IonLabel>
-          <IonIcon name="leaf-outline"></IonIcon>
+          <IonIcon :icon="leafOutline"></IonIcon>
         </IonTabButton>
         <IonTabButton tab="calendar" href="/calendar">
           <IonLabel>Calendar</IonLabel>
-          <IonIcon name="calendar-clear-outline"></IonIcon>
+          <IonIcon :icon="calendarClearOutline"></IonIcon>
         </IonTabButton>
         <IonTabButton tab="profile" href="/profile">
           <IonLabel>Profile</IonLabel>
-          <IonIcon name="person-outline"></IonIcon>
+          <IonIcon :icon="personOutline"></IonIcon>
         </IonTabButton>
       </IonTabBar>
     </IonTabs>
@@ -30,6 +30,11 @@ import {
   IonTabButton,
   IonTabs,
 } from '@ionic/vue';
+import {
+  calendarClearOutline,
+  leafOutline,
+  personOutline,
+} from 'ionicons/icons';
 
 export default defineComponent({
   name: 'App',
@@ -40,6 +45,13 @@ export default defineComponent({
     IonTabBar,
     IonTabButton,
     IonTabs,
+  },
+  setup() {
+    return {
+      calendarClearOutline,
+      leafOutline,
+      personOutline,
+    };
   },
 });
 </script>
