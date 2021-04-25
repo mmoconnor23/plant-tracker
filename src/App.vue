@@ -1,8 +1,7 @@
 <template>
   <IonApp>
     <IonTabs>
-      <!--TODO: named slot error, remove warn override-->
-      <IonTabBar slot="bottom">
+      <IonTabBar>
         <IonTabButton tab="plants" href="/plants">
           <IonLabel>Plants</IonLabel>
           <IonIcon :icon="leafOutline"></IonIcon>
