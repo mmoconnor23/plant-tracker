@@ -37,7 +37,7 @@
       <IonModal
         :is-open="isModalOpen"
         css-class="my-modal"
-        @onDidDismiss="closeModal"
+        @onDidDismiss="closeModal()"
       >
         Modal is open
       </IonModal>
