@@ -26,10 +26,10 @@
         </IonFabButton>
         <IonFabList side="start">
           <IonFabButton>
-            <IonIcon :icon="refreshOutline" @click="onFabListClick('rotate')"/>
+            <IonIcon :icon="refreshOutline" @click="onFabListClick('Rotate')"/>
           </IonFabButton>
           <IonFabButton>
-            <IonIcon :icon="archiveOutline" @click="onFabListClick('repot')"/>
+            <IonIcon :icon="archiveOutline" @click="onFabListClick('Repot')"/>
           </IonFabButton>
         </IonFabList>
       </IonFab>
@@ -37,9 +37,9 @@
       <IonModal
         :is-open="isModalOpen"
         css-class="my-modal"
-        @onDidDismiss="closeModal()"
+        @didDismiss="closeModal"
       >
-        Modal is open
+        <Actions :action="currentAction"/>
       </IonModal>
     </IonContent>
   </IonPage>
@@ -66,6 +66,7 @@ import {
   heartOutline,
   refreshOutline,
 } from 'ionicons/icons';
+import Actions from '../components/Actions.vue';
 
 export default defineComponent({
   components: {
@@ -81,17 +82,20 @@ export default defineComponent({
     IonPage,
     IonTitle,
     IonToolbar,
+
+    Actions,
   },
   setup() {
     const isModalOpen = ref(false);
+    const currentAction = ref('');
     const onFabListClick = (action: string) => {
       isModalOpen.value = true;
-      console.log(`click happened for ${action}`);
+      currentAction.value = action;
     };
 
     const closeModal = () => {
-      // FIXME: once closed, doesn't open again :(
       isModalOpen.value = false;
+      currentAction.value = '';
     };
 
     return {
@@ -100,6 +104,7 @@ export default defineComponent({
       refreshOutline,
 
       isModalOpen,
+      currentAction,
       onFabListClick,
       closeModal,
     };
